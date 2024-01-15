@@ -1,0 +1,370 @@
+<!--Dark new color-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Portfolio</title>
+    <style>
+        :root {
+            --primary-color: #33383C;
+            --secondary-color: #33383C;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800&family=Roboto:wght@100;300;400&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            margin: auto;
+
+        }
+
+        /*  NAVBAR  */
+
+        header {
+            padding: 1.7rem 0;
+            display: flex;
+            justify-content: space-around;
+            background-color: transparent;
+            align-content: center;
+        }
+
+        .logo a {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        nav {
+            z-index: 1;
+        }
+
+        nav a {
+            color: #33383C;
+            text-decoration: none;
+            font-size: .97rem;
+            font-weight: 600;
+            padding: 0.4rem 1.3rem;
+
+        }
+
+        #click {
+            display: none;
+        }
+
+        .menu {
+            display: none;
+        }
+
+
+        nav a {
+            position: relative;
+        }
+
+        nav a::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            width: calc(100% - 2.5rem);
+            height: 3px;
+            background-color: var(--primary-color);
+            transform: scale(0, 1);
+            transform-origin: left;
+            transition: transform .3s ease;
+        }
+
+        nav a:hover::before {
+            transform: scale(1, 1);
+        }
+
+        /*NAVBAR*/
+
+        section {
+            margin: 3rem 8.5rem;
+        }
+
+        .main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .main h3 {
+            font-size: 1.5rem;
+        }
+        .main h1 {
+            font-size: 3rem;
+            font-weight: 600;
+            margin-top: .5rem;
+            color: #33383C;
+        }
+        .main p {
+            line-height: 1.7;
+            font-size: 1.15rem;
+            margin-top: .5rem;
+        }
+        .Information {
+            width: 50%;
+        }
+
+        .social {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social a {
+            color: var(--secondary-color);
+            font-size: 1rem;
+            border: 1px solid #33383C;
+            border-radius: 50%;
+            padding: 0.3rem;
+            text-align: center;
+            width: 27px;
+            height: 25px;
+            display: grid;
+            place-items: center;
+
+        }
+
+        .social a:hover {
+            color: #fff;
+            background-color: var(--secondary-color);
+            box-shadow: 0 0 20px var(--secondary-color);
+            border-color: var(--secondary-color);
+            transition: all .3s ease-in-out;
+
+        }
+
+        /* IMAGE*/
+
+        .images {
+            width: 25em;
+            height: 25em;
+            border-radius: 50%;
+            margin: auto;
+        }
+
+        .blue-bg-outer {
+            width: 25em;
+            height: 25em;
+            border-radius: 50%;
+            background: #33383C;
+            display: grid;
+            place-items: center;
+        }
+
+        .white-bg {
+            width: 21.875em;
+            height: 21.875em;
+            border-radius: 50%;
+            background: #fff;
+            display: grid;
+            place-items: center;
+        }
+
+        .blue-bg {
+            width: 18.75em;
+            height: 18.75em;
+            border-radius: 50%;
+            background: var(--primary-color);
+        }
+
+        .blue-bg img {
+            position: relative;
+            width: 100%;
+            border-radius: 50%;
+        }
+
+
+        /*BUTTON*/
+        .cv-btn {
+            margin-top: 1.5rem;
+            padding: 1em 2.5em;
+            border-radius: 25px;
+            background-color: #33383C;
+            font-size: 1rem;
+            font-weight: bold;
+            color: white;
+            border: 2px solid var(--primary-color);
+            cursor: pointer;
+            transition: .3s ease-in;
+        }
+        .cv-btn:hover {
+            background-color: transparent;
+            color: var(--primary-color);
+        }
+        @media only screen and (max-width: 1024px) {
+            html {
+                font-size: 80%;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            html {
+                font-size: 100%;
+            }
+
+            .menu {
+                display: block;
+            }
+
+            .menu {
+                font-size: 1.5rem;
+                color: var(--primary-color);
+            }
+
+            header {
+                padding: 0.7rem 1rem;
+                justify-content: space-between;
+            }
+
+            nav {
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                background-color: #fff;
+                left: -100%;
+                width: 100%;
+                height: 100vh;
+                top: 3rem;
+                transition: all 0.3s ease;
+            }
+
+            nav a {
+                color: var(--primary-color);
+            }
+            #click:checked~nav {
+                left: 0;
+            }
+            nav a::before {
+                content: none;
+            }
+            section {
+                margin: 1rem 1.5rem;
+            }
+            .Information {
+                width: 100%;
+            }   
+        }
+
+        @media only screen and (max-width: 480px) {
+
+            section {
+                margin: 0 1rem;
+            }
+            .images {
+                min-width: 15em;
+            }
+
+            .blue-bg-outer {
+                width: 20em;
+                height: 20em;
+                margin: auto;
+
+            }
+
+            .white-bg {
+                width: 16.875em;
+                height: 16.875em;
+            }
+
+            .blue-bg {
+                width: 12.75em;
+                height: 12.75em;
+            }
+
+        }
+
+        @media only screen and (max-width: 320px) {
+            .images {
+                height: 17em;
+            }
+            .blue-bg-outer {
+                width: 16em;
+                height: 16em;
+
+            }
+
+            .white-bg {
+                width: 13em;
+                height: 13em;
+            }
+
+            .blue-bg {
+                width: 11em;
+                height: 11em;
+            }
+
+            .blue-bg img {
+                position: relative;
+                bottom: 20px;
+                right: 10px;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <div class="logo">
+            <a href="#" id="logo">Logo</a>
+        </div>
+        <input type="checkbox" id="click">
+        <label for="click" class="mainicon">
+            <div class="menu" id="menu">
+                <i class="bi bi-list"></i>
+            </div>
+        </label>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Skills</a>
+            <a href="#">Portfolio</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+
+    <section>
+        <div class="main">
+            <div class="Information">
+                <h3>Hi, I'm John</h3>
+                <h1>Web Developer</h1>
+                <p>I'm a professional Web Developer. Our Main Goal to help & Satisficed the Local & Global Clients by web development solutions
+                </p>
+                <div class="social">
+                    <a href="https://github.com/bikashdev01"><i class="bi bi-github"></i></a>
+                    <a href=""><i class="bi bi-youtube"></i></a>
+                    <a href="https://t.me/web_devs_i"><i class="bi bi-telegram"></i></a>
+                    <a href="https://www.linkedin.com/in/vikash-web-dev/"><i class="bi bi-linkedin"></i></a>
+                </div>
+                <button class="cv-btn" >Download CV</button>
+            </div>
+            <div class="images">
+                <div class="blue-bg-outer">
+                   <div class="white-bg">
+                        <div class="blue-bg">
+                            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiqYTV1sArgX-ZNZUyLaEIvXKsWDIJqp1muANeDQsY1na7e7rMj7spoypkXZ5MGaWNA6h6VwHqh8Wppd8CaWKkbphDxwwxmg-jcS774pUzZtWHv6g9X5YDAvLCRVs5kikuvjkEHFOIs7vadCd-8YsgG3hkuyEjOCtZ77oCBZqcHhpvh3m5f8Lopztxwn8k/s1600/girl2.png" alt="image">
+                        </div>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<script src="js/index.js"></script>
+</body>
+</html>
+
