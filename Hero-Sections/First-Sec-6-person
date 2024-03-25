@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="intro.css">
+    <title>Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800&family=Roboto:wght@100;300;400&display=swap');
+
+        :root {
+            --primary-color: #f9532d;
+            --primary-dark: #1F252E;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+
+        }
+
+        /* Genral */
+        .container {
+            padding: 0 8.4rem;
+        }
+
+        .img-w {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Nav */
+        header {
+            position: relative;
+            box-shadow: 0 4px 17px rgba(0, 0, 0, .1);
+            background: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            opacity: 0;
+            animation: leftSideAni 1s ease forwards;
+        }
+
+        .logo a {
+            color: #244D61;
+            text-decoration: none;
+        }
+
+        ul {
+            display: flex;
+            gap: .6rem;
+            list-style-type: none;
+            background-color: transparent;
+            overflow: hidden;
+        }
+
+        li a {
+            display: inline-block;
+            padding: .3rem 1rem;
+            color: var(--nav-text);
+            text-decoration: none;
+            font-size: 1.05rem;
+            font-weight: 600;
+            letter-spacing: .7px;
+            border-radius: 36px;
+            line-height: 2;
+            transition: .3s;
+            opacity: 0;
+            animation: navani .3s ease forwards;
+            animation-delay: calc(.15s * var(--navAni));
+        }
+
+        li a.active,
+        li a:hover {
+            color: var(--primary-color);
+        }
+
+        #click {
+            display: none;
+        }
+
+        .menu {
+            display: none;
+        }
+
+        /* Nav End */
+
+        /* Section 1 */
+        .mode i {
+            font-size: 1.4rem;
+            cursor: pointer;
+            color: var(--primary-color);
+            opacity: 0;
+            animation: rightSideAni 1.5s ease forwards;
+        }
+
+        .main {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(277px, 1fr));
+            row-gap: 2rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .main h3 {
+            font-size: 1.5rem;
+            opacity: 0;
+            animation: topSideAni 1s ease forwards;
+        }
+
+        .main h1 {
+            font-size: 4rem;
+            font-weight: 600;
+            opacity: 0;
+            animation: leftSideAni 1s ease forwards;
+            animation-delay: 1s;
+        }
+
+        .main p {
+            line-height: 1.7;
+            font-size: 1.15rem;
+            opacity: 0;
+            animation: topSideAni 1.5s ease forwards;
+        }
+
+        .social {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.4rem;
+            margin-top: 1.7rem;
+        }
+
+        .social a {
+            display: grid;
+            place-items: center;
+            text-decoration: none;
+            color: #000000;
+            font-size: 1.5rem;
+            border: 1.6px solid #000000;
+            border-radius: 50%;
+            padding: 0.39rem;
+            text-align: center;
+            opacity: 0;
+            animation: SocialAni 1s ease forwards;
+            animation-delay: calc(.2s * var(--socialAni));
+        }
+
+        .social a:hover {
+            color: var(--primary-dark);
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            box-shadow: 0 0 20px var(--primary-color);
+            transition: all .3s ease-in-out;
+        }
+
+        .images img {
+            position: relative;
+            border-radius: 6px;
+        }
+
+        .images::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 55%;
+            top: -16px;
+            transform: translateX(-50%);
+            border-radius: 6px;
+        }
+
+        .images::before {
+            background: var(--primary-color);
+        }
+
+        .images {
+            width: 60%;
+            margin-left: auto;
+            position: relative;
+            z-index: -1;
+        }
+
+        .images {
+            opacity: 0;
+            animation: imageAni 1s ease forwards;
+            animation-delay: 1.5s;
+        }
+
+        /* Section 1 End */
+
+        /* Dark Mode */
+
+        .dark-mode {
+            background-color: var(--primary-dark);
+            color: #ffffff;
+        }
+
+        .mode input {
+            display: none;
+        }
+
+        :is(.dark-mode) {
+            .social a {
+                color: var(--primary-color);
+                border: 1.6px solid var(--primary-color);
+            }
+
+            .social a:hover {
+                color: var(--primary-dark);
+                background-color: var(--primary-color);
+                box-shadow: 0 0 20px var(--primary-color);
+            }
+
+            .logo a {
+                color: #fff;
+            }
+        }
+
+        .dark-mode header {
+            box-shadow: 0 4px 17px rgb(80 80 80 / 31%);
+            background: var(--primary-dark);
+        }
+
+        /* Animation */
+        @keyframes leftSideAni {
+            0% {
+                transform: translateX(-100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes navani {
+            0% {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes rightSideAni {
+            0% {
+                transform: translateX(100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes topSideAni {
+            0% {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes SocialAni {
+            0% {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* @keyframes ImgAni {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-9px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+} */
+        @keyframes imageAni {
+            0% {
+                opacity: 0;
+                transform: scale(0);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @media screen and (max-width: 1024px) {
+            .container {
+                padding: 0 4.4rem;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 0 1.6rem;
+            }
+        }
+
+        @media screen and (max-width:600px) {
+
+            header {
+                height: auto;
+            }
+
+            ul {
+                background: #fff;
+                width: 100%;
+                height: 100vh;
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                top: 3.4rem;
+                left: -100%;
+                z-index: 111111;
+            }
+
+            .menu {
+                display: block;
+                font-size: 1.5rem;
+                font-weight: bold;
+                color: #244D61;
+            }
+
+            #click:checked~ul {
+                left: 0%;
+                transition: all 0.3s ease;
+            }
+
+            .dark-mode .menu {
+                color: var(--primary-color);
+            }
+
+            .dark-mode ul {
+                background: var(--primary-dark);
+            }
+
+            .mode {
+                position: absolute;
+                right: 4rem;
+            }
+
+            .images {
+                width: 100%;
+                margin: auto;
+            }
+
+            .main {
+                margin-top: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="container">
+        <div class="page-header">
+            <div class="logo">
+                <a href="#">Logo.</a>
+            </div>
+            <input type="checkbox" id="click">
+
+            <label for="click" class="mainicon">
+                <div class="menu">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </label>
+            <ul>
+                <li><a href="#" class="active" style="--navAni:1">Home</a></li>
+                <li><a href="#" style="--navAni:2">About</a></li>
+                <li><a href="#" style="--navAni:3">Skills</a></li>
+                <li><a href="#" style="--navAni:4">Portfolio</a></li>
+                <li><a href="#" style="--navAni:5">Contact</a></li>
+            </ul>
+            <label class="mode">
+                <input type="checkbox" id="darkModeToggle">
+                <i class='bx bxs-moon'></i>
+            </label>
+        </div>
+    </header>
+
+
+    <section class="container">
+        <div class="main">
+            <div class="detail">
+                <h3>Hi, It's Me</h3>
+                <h1>I'm <span style="color:#f9532d;">John</span></h1>
+                <p>I'm a professional Web Developer. Our Main Goal to help & Satisficed the Local & Global Clients by
+                    web development solutions
+                </p>
+                <div class="social">
+                    <a href="#" style="--socialAni:1"><i class='bx bxl-linkedin'></i></a>
+                    <a href="#" style="--socialAni:2"><i class='bx bxl-instagram'></i></a>
+                    <a href="#" style="--socialAni:3"><i class='bx bxl-github'></i></a>
+                    <a href="#" style="--socialAni:4"><i class='bx bxl-facebook-circle'></i></a>
+                </div>
+            </div>
+            <div class="img-sec">
+                <div class="images">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgaHUE6dD78UAQ7narYEEQj4T3VB8mmQn9O6cAPEi52oxcIFAp1xYTCbTNAY4Abf1CWXtbQnTlLe2Pdg1WzKpULOo02X4MaJB2f-IdU289EDyiqy532b96Mh45tYAIkenvhaLsrD8FXE2nwg-2Cu5VFgAzpqFSZEN3-Rybk-u0sI993zEdZ7bEhPifeH-w/s320/person.jpg"
+                        alt="" class="img-w">
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+        const isDarkMode = localStorage.getItem('darkMode') === 'enabled';
+        if (isDarkMode) {
+            body.classList.add('dark-mode');
+            darkModeToggle.checked = true;
+        }
+        darkModeToggle.addEventListener('change', () => {
+            if (darkModeToggle.checked) {
+                body.classList.add('dark-mode');
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                body.classList.remove('dark-mode');
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        });
+    </script>
+
+</body>
+
+</html>
