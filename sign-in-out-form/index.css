@@ -1,0 +1,194 @@
+:root {
+    --primary-color: #33383C;
+  }
+  
+  * {
+      box-sizing: border-box;
+    }
+    body {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Josefin Sans', Arial, sans-serif;
+      overflow: hidden;
+    }
+    .form-container {
+      -webkit-transform: translate3d(0, 0, 0);
+      position: absolute;
+      top: auto;
+      left: auto;
+      right: auto;
+      width: 100%;
+      max-width: 450px;
+      background: white;
+      box-shadow: 0 30px 35px -15px rgba(0, 0, 0, 0.3), 0 5px 15px -5px rgba(0, 0, 0, 0.4);
+      border-radius: 20px;
+    }
+    .form-1 {
+      z-index: 2;
+    }
+    .form-1.submitted {
+      animation: switchback 1.2s forwards;
+    }
+    .form-1.goback {
+      animation: switchfront 1.2s forwards;
+    }
+    .form-2 {
+      z-index: 1;
+    }
+    .form-2.pull {
+      animation: switchfront 1.2s forwards;
+    }
+    .form-2.push {
+      animation: switchback 1.2s forwards;
+    }
+    /* .form-2 .form-image {
+      background-image: url(https://res.cloudinary.com/dqj168cdc/image/upload/v1491578856/daily-ui-1_2_irnqx9.jpg);
+    } */
+    .form-3 {
+      z-index: 3;
+      transform: translateY(200%);
+      transition: transform 0.5s;
+    }
+    .form-3.active {
+      transform: translateY(0);
+    }
+    .padding-wrap {
+      padding: 20px 50px 40px;
+    }
+    .form-image {
+      width: 100%;
+      height: 220px;
+      background-size: cover;
+      position: relative;
+      border-radius: 20px 20px 0 0;
+      background-color: var(--primary-color);
+    }
+    .form-image svg {
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+    }
+    h1 {
+      margin: 0;
+      margin-bottom: 30px;
+      color: var(--primary-color);
+    }
+    .form-group {
+      width: 100%;
+      position: relative;
+      margin-bottom: 30px;
+    }
+    .form-group input {
+      border: 0;
+      border-bottom: 1px solid black;
+      width: 100%;
+      padding: 8px;
+      transition: border-color 0.3s;
+    }
+    .form-group input:focus {
+      outline: none;
+      border-color: var(--primary-color);
+    }
+    .form-group input:focus + label {
+      transform: scale(0.8) translateY(-140%);
+      color: var(--primary-color);
+    }
+    .form-group input:valid + label {
+      transform: scale(0.8) translateY(-140%);
+      color: var(--primary-color);
+    }
+    .form-group label {
+      position: absolute;
+      top: 8px;
+      left: 0;
+      cursor: text;
+      transition: transform 0.3s, color 0.3s;
+    }
+    input[type="submit"] {
+      width: 100%;
+      padding: 15px;
+      text-align: center;
+      border-radius: 100px;
+      border: 0;
+      font-weight: bold;
+      background: var(--primary-color);
+      color: white;
+      margin-bottom: 20px;
+      transition: background 0.3s;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background: #fff;
+      outline: 2px solid var(--primary-color);
+      color: var(--primary-color);
+    }
+    input[type="submit"]:focus {
+      outline: none;
+    }
+    .login {
+      display: block;
+      text-align: center;
+      font-size: 13px;
+    }
+    .login a {
+      color: #3b4371;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .login a:hover {
+      color: #2a2f4f;
+    }
+    @keyframes switchback {
+      0% {
+        transform: translateX(0) scale(1);
+        z-index: 2;
+      }
+      25% {
+        transform: translateX(0) scale(1.1);
+        z-index: 2;
+      }
+      50% {
+        transform: translateX(-50%) scale(1.1);
+        z-index: 2;
+      }
+      75% {
+        transform: translateX(-50%) scale(0.9);
+        z-index: 2;
+      }
+      80% {
+        z-index: 1;
+      }
+      100% {
+        transform: translateX(0) scale(0.9);
+        z-index: 1;
+      }
+    }
+    @keyframes switchfront {
+      0% {
+        transform: translateX(0) scale(0.9);
+        z-index: 1;
+      }
+      25% {
+        transform: translateX(0) scale(0.9);
+        z-index: 1;
+      }
+      50% {
+        transform: translateX(50%) scale(0.9);
+        z-index: 1;
+      }
+      75% {
+        transform: translateX(50%) scale(1);
+        z-index: 1;
+      }
+      80% {
+        z-index: 2;
+      }
+      100% {
+        transform: translateX(0) scale(1);
+        z-index: 2;
+      }
+    }
+    
