@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus — Modern Landing Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Navigation -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">Nexus<span>.</span></a>
+
+            <div class="nav__menu" id="navMenu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#home" class="nav__link active">Home</a></li>
+                    <li class="nav__item"><a href="#features" class="nav__link">Features</a></li>
+                    <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="#stats" class="nav__link">Stats</a></li>
+                    <li class="nav__item"><a href="#testimonials" class="nav__link">Reviews</a></li>
+                    <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                </ul>
+                <button class="btn btn--outline nav__cta-mobile">Get Started</button>
+            </div>
+
+            <div class="nav__actions">
+                <button class="btn btn--outline nav__cta">Get Started</button>
+                <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation">
+                    <i class="bi bi-list"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ==================== HERO ==================== -->
+        <section class="hero" id="home">
+            <div class="hero__bg">
+                <div class="hero__blob hero__blob--1"></div>
+                <div class="hero__blob hero__blob--2"></div>
+                <div class="hero__blob hero__blob--3"></div>
+                <div class="hero__particles" id="heroParticles"></div>
+            </div>
+
+            <div class="hero__content container">
+                <div class="hero__text">
+                    <span class="hero__badge reveal-up">✦ Welcome to the future</span>
+                    <h1 class="hero__title reveal-up">
+                        Build Something
+                        <span class="gradient-text">Extraordinary</span>
+                        Today
+                    </h1>
+                    <p class="hero__desc reveal-up">
+                        Craft stunning digital experiences with cutting-edge tools, seamless animations,
+                        and a design system that scales with your vision.
+                    </p>
+                    <div class="hero__actions reveal-up">
+                        <a href="#features" class="btn btn--primary btn--lg">
+                            Explore Features
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                        <a href="#about" class="btn btn--ghost btn--lg">
+                            <i class="bi bi-play-circle"></i>
+                            Watch Demo
+                        </a>
+                    </div>
+                    <div class="hero__stats reveal-up">
+                        <div class="hero__stat">
+                            <strong>10K+</strong>
+                            <span>Active Users</span>
+                        </div>
+                        <div class="hero__stat-divider"></div>
+                        <div class="hero__stat">
+                            <strong>98%</strong>
+                            <span>Satisfaction</span>
+                        </div>
+                        <div class="hero__stat-divider"></div>
+                        <div class="hero__stat">
+                            <strong>4.9★</strong>
+                            <span>App Rating</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero__visual reveal-right">
+                    <div class="hero__card-mockup">
+                        <div class="mockup__header">
+                            <span class="mockup__dot"></span>
+                            <span class="mockup__dot"></span>
+                            <span class="mockup__dot"></span>
+                        </div>
+                        <div class="mockup__body">
+                            <div class="mockup__line mockup__line--wide"></div>
+                            <div class="mockup__line mockup__line--medium"></div>
+                            <div class="mockup__chart">
+                                <div class="chart__bar" style="--h:60%"></div>
+                                <div class="chart__bar" style="--h:80%"></div>
+                                <div class="chart__bar" style="--h:50%"></div>
+                                <div class="chart__bar" style="--h:90%"></div>
+                                <div class="chart__bar" style="--h:70%"></div>
+                                <div class="chart__bar" style="--h:85%"></div>
+                            </div>
+                            <div class="mockup__metrics">
+                                <div class="metric">
+                                    <i class="bi bi-arrow-up-right"></i>
+                                    <span>+24%</span>
+                                </div>
+                                <div class="metric metric--success">
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    <span>Goal Met</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero__floating-badge hero__floating-badge--1">
+                        <i class="bi bi-lightning-charge-fill"></i>
+                        <span>Fast</span>
+                    </div>
+                    <div class="hero__floating-badge hero__floating-badge--2">
+                        <i class="bi bi-shield-check-fill"></i>
+                        <span>Secure</span>
+                    </div>
+                    <div class="hero__floating-badge hero__floating-badge--3">
+                        <i class="bi bi-stars"></i>
+                        <span>5 Stars</span>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#features" class="hero__scroll-hint">
+                <span>Scroll to explore</span>
+                <i class="bi bi-chevron-double-down"></i>
+            </a>
+        </section>
+
+        <!-- ==================== FEATURES ==================== -->
+        <section class="features section" id="features">
+            <div class="container">
+                <div class="section__header reveal-up">
+                    <span class="section__badge">What We Offer</span>
+                    <h2 class="section__title">Powerful Features<br>Built for <span class="gradient-text">Scale</span></h2>
+                    <p class="section__desc">Everything you need to build, launch, and grow your digital product in one beautiful platform.</p>
+                </div>
+
+                <div class="features__grid">
+                    <div class="feature-card reveal-up" data-delay="0">
+                        <div class="feature-card__icon">
+                            <i class="bi bi-zap-fill"></i>
+                        </div>
+                        <h3>Lightning Fast</h3>
+                        <p>Optimised for peak performance with sub-second load times and smooth 60fps animations throughout.</p>
+                        <a href="#" class="feature-card__link">Learn more <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                    <div class="feature-card reveal-up" data-delay="100">
+                        <div class="feature-card__icon">
+                            <i class="bi bi-shield-lock-fill"></i>
+                        </div>
+                        <h3>Bank-Level Security</h3>
+                        <p>End-to-end encryption, two-factor authentication, and continuous security monitoring keep your data safe.</p>
+                        <a href="#" class="feature-card__link">Learn more <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                    <div class="feature-card reveal-up" data-delay="200">
+                        <div class="feature-card__icon">
+                            <i class="bi bi-palette-fill"></i>
+                        </div>
+                        <h3>Pixel-Perfect Design</h3>
+                        <p>Handcrafted components with meticulous attention to every detail, colour, shadow, and transition.</p>
+                        <a href="#" class="feature-card__link">Learn more <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                    <div class="feature-card reveal-up" data-delay="0">
+                        <div class="feature-card__icon">
+                            <i class="bi bi-phone-fill"></i>
+                        </div>
+                        <h3>Fully Responsive</h3>
+                        <p>Flawless experience across all devices — from the smallest phone to the largest 4K display.</p>
+                        <a href="#" class="feature-card__link">Learn more <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                    <div class="feature-card reveal-up" data-delay="100">
+                        <div class="feature-card__icon">
+                            <i class="bi bi-graph-up-arrow"></i>
+                        </div>
+                        <h3>Advanced Analytics</h3>
+                        <p>Real-time dashboards, conversion funnels, and AI-driven insights to help you make smarter decisions.</p>
+                        <a href="#" class="feature-card__link">Learn more <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                    <div class="feature-card reveal-up" data-delay="200">
+                        <div class="feature-card__icon">
+                            <i class="bi bi-plug-fill"></i>
+                        </div>
+                        <h3>Easy Integrations</h3>
+                        <p>Connect with 200+ popular tools and services through our seamless plug-and-play integration marketplace.</p>
+                        <a href="#" class="feature-card__link">Learn more <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== ABOUT ==================== -->
+        <section class="about section" id="about">
+            <div class="container">
+                <div class="about__grid">
+                    <div class="about__visual reveal-left">
+                        <div class="about__image-wrap">
+                            <div class="about__image-bg"></div>
+                            <div class="about__image-card">
+                                <div class="about__icon-row">
+                                    <i class="bi bi-rocket-takeoff-fill"></i>
+                                </div>
+                                <h4>Our Mission</h4>
+                                <p>To empower teams with tools that make complex work feel effortless and joyful.</p>
+                            </div>
+                        </div>
+                        <div class="about__badge-group">
+                            <div class="about__badge">
+                                <i class="bi bi-award-fill"></i>
+                                <div>
+                                    <strong>Award Winning</strong>
+                                    <span>Best SaaS 2024</span>
+                                </div>
+                            </div>
+                            <div class="about__badge">
+                                <i class="bi bi-people-fill"></i>
+                                <div>
+                                    <strong>50K+ Teams</strong>
+                                    <span>Trust Nexus</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about__content reveal-right">
+                        <span class="section__badge">Our Story</span>
+                        <h2 class="section__title">We Build Tools That <span class="gradient-text">Inspire</span> Greatness</h2>
+                        <p class="about__text">
+                            Founded in 2020, Nexus started as a small team of passionate engineers and designers with one goal:
+                            make digital creation accessible to everyone. Today we serve over 50,000 teams worldwide.
+                        </p>
+                        <p class="about__text">
+                            Our platform combines enterprise-grade reliability with the kind of delightful experience
+                            you'd expect from a consumer app — because work shouldn't feel like work.
+                        </p>
+                        <ul class="about__list">
+                            <li><i class="bi bi-check-circle-fill"></i> No-code visual builder</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Real-time collaboration</li>
+                            <li><i class="bi bi-check-circle-fill"></i> 99.99% uptime SLA</li>
+                            <li><i class="bi bi-check-circle-fill"></i> 24/7 expert support</li>
+                        </ul>
+                        <div class="about__actions">
+                            <a href="#" class="btn btn--primary">Our Story <i class="bi bi-arrow-right"></i></a>
+                            <a href="#" class="btn btn--ghost">Meet the Team</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== STATS ==================== -->
+        <section class="stats section" id="stats">
+            <div class="stats__bg"></div>
+            <div class="container">
+                <div class="section__header reveal-up">
+                    <span class="section__badge">By the Numbers</span>
+                    <h2 class="section__title">Trusted by Teams<br><span class="gradient-text">Worldwide</span></h2>
+                </div>
+                <div class="stats__grid">
+                    <div class="stat-card reveal-up" data-delay="0">
+                        <i class="bi bi-people-fill stat-card__icon"></i>
+                        <div class="stat-card__number" data-target="50000">0</div>
+                        <div class="stat-card__suffix">+</div>
+                        <p class="stat-card__label">Active Users</p>
+                    </div>
+                    <div class="stat-card reveal-up" data-delay="100">
+                        <i class="bi bi-globe stat-card__icon"></i>
+                        <div class="stat-card__number" data-target="120">0</div>
+                        <div class="stat-card__suffix">+</div>
+                        <p class="stat-card__label">Countries Served</p>
+                    </div>
+                    <div class="stat-card reveal-up" data-delay="200">
+                        <i class="bi bi-lightning-fill stat-card__icon"></i>
+                        <div class="stat-card__number" data-target="99">0</div>
+                        <div class="stat-card__suffix">.9%</div>
+                        <p class="stat-card__label">Uptime SLA</p>
+                    </div>
+                    <div class="stat-card reveal-up" data-delay="300">
+                        <i class="bi bi-star-fill stat-card__icon"></i>
+                        <div class="stat-card__number" data-target="4">0</div>
+                        <div class="stat-card__suffix">.9 ★</div>
+                        <p class="stat-card__label">Average Rating</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== CTA BANNER ==================== -->
+        <section class="cta-banner section">
+            <div class="container">
+                <div class="cta-banner__inner reveal-up">
+                    <div class="cta-banner__blob"></div>
+                    <span class="section__badge">Limited Time Offer</span>
+                    <h2>Start Free. Scale Fast.<br><span class="gradient-text">No Credit Card Required.</span></h2>
+                    <p>Join thousands of teams already building extraordinary things with Nexus. Your first 30 days are on us.</p>
+                    <div class="cta-banner__actions">
+                        <a href="#" class="btn btn--primary btn--lg">Start for Free</a>
+                        <a href="#" class="btn btn--outline-light btn--lg">View Pricing</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== TESTIMONIALS ==================== -->
+        <section class="testimonials section" id="testimonials">
+            <div class="container">
+                <div class="section__header reveal-up">
+                    <span class="section__badge">Social Proof</span>
+                    <h2 class="section__title">Loved by <span class="gradient-text">Thousands</span></h2>
+                    <p class="section__desc">Don't just take our word for it — hear from the teams that use Nexus every day.</p>
+                </div>
+
+                <div class="testimonials__grid">
+                    <div class="testimonial-card reveal-up" data-delay="0">
+                        <div class="testimonial-card__stars">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        </div>
+                        <p>"Nexus transformed how our team works. The animations and UI are second to none — our clients are blown away every time."</p>
+                        <div class="testimonial-card__author">
+                            <div class="testimonial-card__avatar" style="--av-color:#6C63FF">SK</div>
+                            <div>
+                                <strong>Sarah Kim</strong>
+                                <span>Lead Designer, Acme Corp</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card reveal-up" data-delay="100">
+                        <div class="testimonial-card__stars">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        </div>
+                        <p>"We cut our development time by 60%. The integrations are seamless and the support team is always there when we need them."</p>
+                        <div class="testimonial-card__author">
+                            <div class="testimonial-card__avatar" style="--av-color:#FF6B6B">MJ</div>
+                            <div>
+                                <strong>Marcus Johnson</strong>
+                                <span>CTO, TechFlow Inc</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card reveal-up" data-delay="200">
+                        <div class="testimonial-card__stars">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                        </div>
+                        <p>"The scroll animations alone are worth it. Our landing page conversion rate jumped 45% after switching to Nexus. Incredible product!"</p>
+                        <div class="testimonial-card__author">
+                            <div class="testimonial-card__avatar" style="--av-color:#4ECDC4">AP</div>
+                            <div>
+                                <strong>Aisha Patel</strong>
+                                <span>Founder, GrowthLab</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card reveal-up" data-delay="0">
+                        <div class="testimonial-card__stars">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        </div>
+                        <p>"Best SaaS investment we've made this year. The analytics dashboard gives us insights we never had before. 10/10 recommend."</p>
+                        <div class="testimonial-card__author">
+                            <div class="testimonial-card__avatar" style="--av-color:#F7B731">LM</div>
+                            <div>
+                                <strong>Lucas Martin</strong>
+                                <span>Growth Manager, Shopify</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card reveal-up" data-delay="100">
+                        <div class="testimonial-card__stars">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        </div>
+                        <p>"Migrating from our old platform was seamless. The onboarding team held our hand every step of the way. Genuinely impressed."</p>
+                        <div class="testimonial-card__author">
+                            <div class="testimonial-card__avatar" style="--av-color:#A29BFE">ZC</div>
+                            <div>
+                                <strong>Zoe Chen</strong>
+                                <span>Product Lead, Stripe</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card reveal-up" data-delay="200">
+                        <div class="testimonial-card__stars">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        </div>
+                        <p>"The mobile responsiveness is flawless. Every pixel looks perfect on every device. Our mobile users love the experience."</p>
+                        <div class="testimonial-card__author">
+                            <div class="testimonial-card__avatar" style="--av-color:#FD79A8">RB</div>
+                            <div>
+                                <strong>Ryan Brooks</strong>
+                                <span>CEO, AppForge</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== NEWSLETTER ==================== -->
+        <section class="newsletter section" id="contact">
+            <div class="container">
+                <div class="newsletter__inner reveal-up">
+                    <div class="newsletter__text">
+                        <span class="section__badge">Stay Updated</span>
+                        <h2>Get the Latest<br><span class="gradient-text">Insights & Updates</span></h2>
+                        <p>Join 8,000+ subscribers getting weekly tips on design, development, and growth strategies.</p>
+                        <ul class="newsletter__perks">
+                            <li><i class="bi bi-check-circle-fill"></i> Weekly curated articles</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Exclusive early access</li>
+                            <li><i class="bi bi-check-circle-fill"></i> No spam, ever</li>
+                        </ul>
+                    </div>
+                    <div class="newsletter__form-wrap">
+                        <form class="newsletter__form" id="newsletterForm">
+                            <div class="form__group">
+                                <label for="newsletterName">Full Name</label>
+                                <input type="text" id="newsletterName" name="name" placeholder="Jane Doe" autocomplete="name">
+                            </div>
+                            <div class="form__group">
+                                <label for="newsletterEmail">Email Address</label>
+                                <input type="email" id="newsletterEmail" name="email" placeholder="jane@example.com" autocomplete="email" required>
+                            </div>
+                            <button type="submit" class="btn btn--primary btn--full">
+                                Subscribe Now
+                                <i class="bi bi-send-fill"></i>
+                            </button>
+                            <p class="form__disclaimer">By subscribing you agree to our <a href="#">Privacy Policy</a>.</p>
+                        </form>
+                        <div class="newsletter__success" id="newsletterSuccess" hidden>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <h3>You're in!</h3>
+                            <p>Thanks for subscribing. Check your inbox for a confirmation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <a href="#" class="nav__logo">Nexus<span>.</span></a>
+                    <p>Building extraordinary digital experiences that scale with your ambition.</p>
+                    <div class="footer__social">
+                        <a href="https://github.com/bikashdev01/" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                        <a href="https://www.linkedin.com/in/vikash-web-dev/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://www.youtube.com/@Web_Devs__" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                        <a href="https://t.me/web_devs_i" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><i class="bi bi-telegram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer__col">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Changelog</a></li>
+                        <li><a href="#">Roadmap</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Community</a></li>
+                        <li><a href="#">Status</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p>© <span id="footerYear"></span> Nexus. All rights reserved.</p>
+                <div class="footer__legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Settings</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll To Top Button -->
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+        <i class="bi bi-chevron-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
